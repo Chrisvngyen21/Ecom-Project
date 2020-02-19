@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 
 import SignInForm from "./signinform";
+import PageTitle from "../pagetitle";
 
 class SignIn extends Component {
   onSubmit = feilds => {
@@ -10,6 +11,7 @@ class SignIn extends Component {
   render() {
     return (
       <div className="sign-in">
+        <PageTitle className="sign-in-page-title" title="Login" />
         <SignInForm onSubmit={this.onSubmit} className="sign-in-form" />
       </div>
     );
