@@ -6,10 +6,11 @@ import { Router, Switch, Route } from "react-router-dom";
 import reducers from "./reducers";
 
 import "./style/main.scss";
+import history from "./history";
 import Layout from "./components/layout";
 import SignIn from "./components/auth/signin";
 import SignUp from "./components/auth/signup";
-import history from "./history";
+import Account from "./components/account/account";
 
 const createStoreWithMiddleware = applyMiddleware()(
   compose(
@@ -26,8 +27,12 @@ function main() {
         <Layout>
           <Switch>
             <Route path="/" exact component={SignIn} />
+
             <Route path="/signin" exact component={SignIn} />
+
             <Route path="/signup" exact component={SignUp} />
+
+            <Route path="/account" exact component={Account} />
           </Switch>
         </Layout>
       </Router>
