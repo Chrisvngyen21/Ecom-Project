@@ -16,7 +16,7 @@ class Account extends Component {
       },
 
       {
-        // _id: 1,
+        _id: 1,
         title: "Account Information",
         active: true,
         component: <AccountInfo />
