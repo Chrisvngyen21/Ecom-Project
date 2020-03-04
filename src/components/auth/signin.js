@@ -1,9 +1,17 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
+
+import * as actions from "../../actions";
 
 import SignInForm from "./signinform";
 import PageTitle from "../pagetitle";
 
 class SignIn extends Component {
+  componentDidMount() {
+    this.props.setHeaderLinks([]);
+    this.props.setNavbarLinks([]);
+  }
+
   onSubmit = feilds => {
     console.log(feilds);
   };
@@ -17,5 +25,7 @@ class SignIn extends Component {
     );
   }
 }
+
+SignIn = connect(null, actions)(SignIn);
 
 export default SignIn;
