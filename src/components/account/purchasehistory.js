@@ -13,9 +13,11 @@ class PurchaceHistory extends Component {
           title="Purchase History"
         />
 
-        <Purchases className="purchase-history_purchases" />
+        <div className="purchase-history_content">
+          <Purchases className="purchase-history_purchases" />
 
-        <PurchasseDetail className="purchase-history__detail" />
+          <PurchasseDetail className="purchase-history__detail" />
+        </div>
 
         <div className="purchase-history__border-bottom"></div>
       </div>

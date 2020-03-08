@@ -11,10 +11,18 @@ class Purchases extends Component {
 
   render() {
     const { className } = this.props;
+
     return (
       <div className={`${className} purchases`}>
         {this.props.purchases.map(purchase => {
-          return <div>{purchase.title}</div>;
+          return (
+            <div key={purchase._id} className="purchase_purchase purchase">
+              <img
+                className="purchase_img"
+                src="https://via.placeholder.com/80x80"
+              />
+            </div>
+          );
         })}
       </div>
     );
