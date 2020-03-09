@@ -18,7 +18,7 @@ class Purchases extends Component {
             <a
               onClick={() => this.props.setPurchaseDetail(purchase._id)}
               key={purchase._id}
-              className="purchase_purchase purchase"
+              className="purchases_purchase purchase"
             >
               <img
                 className="purchase_img"

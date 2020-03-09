@@ -2,7 +2,17 @@ import { SET_USER_PURCHASES, SET_PURCHASE_DETAIL } from "../actions/types";
 
 const INITAL_STATE = {
   purchases: [],
-  purchaseDetail: {}
+  purchaseDetails: {
+    _id: -1,
+    total: 0,
+    orderNumber: "",
+    orderDate: null,
+    creditCard: "",
+    user: {
+      name: "",
+      shippingAddress: ""
+    }
+  }
 };
 
 export default function(state = INITAL_STATE, action) {
@@ -14,15 +24,15 @@ export default function(state = INITAL_STATE, action) {
       };
 
     case SET_PURCHASE_DETAIL:
-      let purchaseDetail;
+      let purchaseDetails;
       state.purchases.map(purchase => {
         if ((purchase._id = action.payload)) {
-          purchaseDetail = purchase;
+          purchaseDetails = purchase;
         }
       });
       return {
         ...state,
-        purchaseDetail
+        purchaseDetails
       };
 
     default:
