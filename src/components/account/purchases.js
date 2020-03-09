@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 
 import * as actions from "../../actions";
-import PurchaseDetails from "./purchaseDetails";
 
 class Purchases extends Component {
   componentDidMount() {
@@ -16,12 +15,16 @@ class Purchases extends Component {
       <div className={`${className} purchases`}>
         {this.props.purchases.map(purchase => {
           return (
-            <div key={purchase._id} className="purchase_purchase purchase">
+            <a
+              onClick={() => this.props.setPurchaseDetail(purchase._id)}
+              key={purchase._id}
+              className="purchase_purchase purchase"
+            >
               <img
                 className="purchase_img"
                 src="https://via.placeholder.com/80x80"
               />
-            </div>
+            </a>
           );
         })}
       </div>
