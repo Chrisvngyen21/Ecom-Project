@@ -9,9 +9,21 @@ class AccountInformationForm extends Component {
     const { className, handleSubmit } = this.props;
 
     return (
-      <form onSubmit={handleSubmit} className={`${className} sign-in-form`}>
+      <form
+        onSubmit={handleSubmit}
+        className={`${className} account-information-form`}
+      >
         <Field
-          className="sign-in-form-email"
+          className="account-information-form-name"
+          type="name"
+          title="Name"
+          placeholder="Name"
+          name="name"
+          component={FormInput}
+        />
+
+        <Field
+          className="account-information-form-email"
           type="email"
           title="Email"
           placeholder="Email"
@@ -20,6 +32,42 @@ class AccountInformationForm extends Component {
         />
 
         <Field
+          className="account-information-form-street_address"
+          type="address"
+          title="Street Address"
+          placeholder="Street Address"
+          name="address"
+          component={FormInput}
+        />
+
+        <Field
+          className="account-information-form-city"
+          type="city"
+          title="City"
+          placeholder="City"
+          name="city"
+          component={FormInput}
+        />
+
+        <Field
+          className="account-information-form-state"
+          type="state"
+          title="State"
+          placeholder="State"
+          name="state"
+          component={FormInput}
+        />
+
+        <Field
+          className="account-information-form-zipcode"
+          type="zipcode"
+          title="Zipcode"
+          placeholder="Zipcode"
+          name="zipcode"
+          component={FormInput}
+        />
+
+        {/* <Field
           className="sign-in-form-password"
           type="password"
           title="Password"
@@ -28,8 +76,6 @@ class AccountInformationForm extends Component {
           component={FormInput}
         />
 
-        <div className="sign-in-form-line"></div>
-
         <Field
           className="sign-in-form-login"
           onClick={() => history.push("/account")}
@@ -37,7 +83,7 @@ class AccountInformationForm extends Component {
           title="Login"
           name="login"
           component={FormButton}
-        />
+        /> */}
       </form>
     );
   }
