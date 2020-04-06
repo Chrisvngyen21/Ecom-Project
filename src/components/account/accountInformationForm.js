@@ -27,7 +27,6 @@ class AccountInformationForm extends Component {
           name="name"
           component={FormInput}
         />
-
         <Field
           className="account-information-form-email"
           type="email"
@@ -36,7 +35,6 @@ class AccountInformationForm extends Component {
           name="email"
           component={FormInput}
         />
-
         <Field
           className="account-information-form-street_address"
           type="address"
@@ -45,7 +43,6 @@ class AccountInformationForm extends Component {
           name="address"
           component={FormInput}
         />
-
         <Field
           className="account-information-form-city"
           type="city"
@@ -54,7 +51,6 @@ class AccountInformationForm extends Component {
           name="city"
           component={FormInput}
         />
-
         <Field
           className="account-information-form-state"
           type="state"
@@ -63,7 +59,6 @@ class AccountInformationForm extends Component {
           name="state"
           component={FormInput}
         />
-
         <Field
           className="account-information-form-zipcode"
           type="zipcode"
@@ -72,6 +67,8 @@ class AccountInformationForm extends Component {
           name="zipcode"
           component={FormInput}
         />
+
+        <div key={3} className="account-information-form-line"></div>
 
         {this.state.showPasswords ? (
           [
@@ -103,6 +100,27 @@ class AccountInformationForm extends Component {
               placeholder="Confirm Password"
               name="confirm"
               component={FormInput}
+            />,
+
+            <Field
+              key={4}
+              className="account-information-form-update_information"
+              onClick={() => this.setState({ showPasswords: false })}
+              type="submit"
+              title="Update Information"
+              name="update-information"
+              component={FormButton}
+            />,
+
+            <Field
+              key={5}
+              className="account-information-form-cancel"
+              onClick={() => this.setState({ showPasswords: false })}
+              type="button"
+              title="Cancel"
+              name="cancel"
+              short={true}
+              component={FormButton}
             />
           ]
         ) : (
