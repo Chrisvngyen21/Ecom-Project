@@ -11,29 +11,30 @@ class Account extends Component {
       {
         _id: 0,
         title: "Shop",
-        path: "/shop"
+        path: "/shop",
       },
 
       {
         _id: 1,
         title: "Logout",
-        path: "/"
-      }
+        path: "/",
+      },
     ];
+
     const navbarLinks = [
       {
         _id: 0,
         title: "Purchase History",
         active: true,
-        component: <PurchaseHistory />
+        component: <PurchaseHistory />,
       },
 
       {
         _id: 1,
         title: "Account Information",
         active: false,
-        component: <AccountInfo />
-      }
+        component: <AccountInfo />,
+      },
     ];
 
     this.props.setHeaderLinks(headerLinks);
@@ -43,7 +44,7 @@ class Account extends Component {
   renderContent() {
     let jsx;
     if (this.props.navbarLinks) {
-      this.props.navbarLinks.forEach(link => {
+      this.props.navbarLinks.forEach((link) => {
         if (link.active) {
           jsx = link.component;
         }
