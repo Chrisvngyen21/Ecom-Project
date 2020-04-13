@@ -6,7 +6,7 @@ import {
 
 import { fetchUserPurchases, setPurchaseDetail } from "./user";
 
-import { fetchShopCategories } from "./shop";
+import { fetchShopCategories, fetchShopProducts } from "./shop";
 
 export {
   // Header
@@ -18,4 +18,5 @@ export {
   setPurchaseDetail,
   // Shoop
   fetchShopCategories,
+  fetchShopProducts,
 };
