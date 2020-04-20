@@ -27,14 +27,33 @@ class Shop extends Component {
   }
 
   render() {
-    return <div className="shop">Shop</div>;
+    return (
+      <div className="shop">
+        {/* shop search bar */}
+        <div className="shop_products">
+          {this.props.filteredProducts.map((product) => {
+            return (
+              <div key={product._id} className="shop-product">
+                <div className="shop-product_title">{product.title}</div>
+
+                <div className="shop-product_description">
+                  {product.description}
+                </div>
+              </div>
+            );
+          })}
+        </div>
+        {/* shop cart button */}
+      </div>
+    );
   }
 }
 
 function mapStateToProps(state) {
-  const { categories } = state.shop;
+  const { categories, filteredProducts } = state.shop;
   return {
     categories,
+    filteredProducts,
   };
 }
 
